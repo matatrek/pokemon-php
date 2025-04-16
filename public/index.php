@@ -1,1 +1,2 @@
-<h1>Hola mundo!!1</h1>
+<?php
+require_once '../routes/web.php';
