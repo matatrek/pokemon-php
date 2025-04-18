@@ -58,9 +58,9 @@ class Router {
         }
 
         ob_start();
-        require __DIR__ ."/views/$view.php";
+        require __DIR__ ."/../views/$view.php";
         $content = ob_get_clean();
-        require __DIR__ ."/views/layouts/main.php";
+        require __DIR__ ."/../views/layouts/main.php";
     }
 
 }
