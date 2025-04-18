@@ -4,11 +4,11 @@ class Router {
     public array $routesGET  = [];
     public array $routesPOST = [];
 
-    public function get(string $uri, string $callback) : void {
+    public function get(string $uri, array $callback) : void {
         $this->routesGET[$uri] = $callback;
     }
 
-    public function post(string $uri, string $callback) : void {
+    public function post(string $uri, array $callback) : void {
         $this->routesPOST[$uri] = $callback;
     }
 
