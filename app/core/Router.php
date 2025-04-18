@@ -40,7 +40,7 @@ class Router {
             $callback = $this->routesGET[$uri] ?? null;
         }
 
-        $data = [...$params];
+        $data = [$this,...$params];
         if ($callback) {
             call_user_func($callback, $data);
         } else {
