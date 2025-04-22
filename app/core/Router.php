@@ -37,7 +37,7 @@ class Router {
             $callback = $this->routesGET[$uri] ?? null;
         }
         if ($method == 'POST') {
-            $callback = $this->routesGET[$uri] ?? null;
+            $callback = $this->routesPOST[$uri] ?? null;
         }
 
         $data = [$this,...$params];
