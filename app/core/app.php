@@ -7,3 +7,5 @@ $dotenv->safeLoad();
 
 require __DIR__ . '/./helpers.php';
 require __DIR__ . '/./database.php';
+
+Models\PokemonModel::setConnection($connection);
