@@ -5,13 +5,13 @@ use Models\PokemonModel;
 
 class HomeController {
 
-    public static function index($data) : void {
-        [$router] = $data;
-        $router->render('home');
+    public static function index($request) : void {
+        // [$router] = $data;
+        $request->router->render('home');
     }
 
-    public static function list() : void {
-        $pokemons = PokemonModel::all()->data;
+    public static function list($request) : void {
+        $pokemons = PokemonModel::all($request->body)->data;
         require __DIR__ ."/../views/components/card-pokemon.php";
     }
 

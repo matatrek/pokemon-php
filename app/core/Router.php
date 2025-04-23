@@ -40,7 +40,13 @@ class Router {
             $callback = $this->routesPOST[$uri] ?? null;
         }
 
-        $data = [$this,...$params];
+        $data = (object)[
+            'router' => $this,
+            'params' => $params,
+            'query'  => (object)$_GET,
+            'body'   => (object)$_POST
+        ];
+
         if ($callback) {
             call_user_func($callback, $data);
         } else {
