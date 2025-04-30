@@ -1,3 +1,4 @@
+const baseUrl = `${window.location.protocol}//${window.location.host}`;
 $(document).ready(() => {
 
     const debouncedLog = debounce(getData, 500);
@@ -35,12 +36,12 @@ const getData = () => {
         type: JSON.stringify(type)
     };
 
-    ajax('POST', 'http://pokemon-php.test/list', filters, (response) => {
+    ajax('POST', baseUrl + '/list', filters, (response) => {
         $('#list-pokemon').html(response);
     });
 }
 const getTypes = () => {
-    ajax('POST', 'http://pokemon-php.test/types', {}, (response) => {
+    ajax('POST', baseUrl + '/types', {}, (response) => {
         $('#filter-type').html(response);
     });
 }
