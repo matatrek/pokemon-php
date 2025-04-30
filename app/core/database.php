@@ -20,5 +20,5 @@ try {
     // echo $connection->getAttribute(PDO::ATTR_SERVER_VERSION);
 
 } catch (PDOException $th) {
-    echo $e->getMessage();
+    echo $th->getMessage();
 }
